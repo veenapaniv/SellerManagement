@@ -1,0 +1,15 @@
+{
+    "profile_details": {
+        "name": "John Brew",
+        "Address": "318 Willow Creek, #300, Santa Clara, California",
+        "Date of Birth": "05/12/1977",
+        "Phone":"9903881435",
+        "Channels":[
+        "amazon",
+        "ebay",
+        "shein",
+        "shopclues"
+        ]
+
+    }
+}

@@ -1,0 +1,179 @@
+.seller-container{
+	width: 80%;
+	margin: 0 auto; /* Center the DIV horizontally */
+	height: 100%;
+}
+.seller-header{
+	width: 100%;
+	position: absolute;
+	background: #232d6f;
+	height: 8%;
+	color: #fff;
+	left:0px;
+}
+.seller-footer{
+	width: 100%;
+	position: fixed;
+	background: #232d6f;
+	height: 8%;
+	color: #fff;
+	left:0px;
+}
+.seller-header{
+    top: 0;
+}
+.seller-footer{
+	bottom: 0;
+}
+.seller-nav {
+	height:100%
+}
+.seller-header nav a:hover{
+	background-color: #f4f4f4;
+}    
+/* Some more styles to beutify this example */
+.hamburger {
+    height: 100%;
+    position: fixed;
+	width:0;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: #232d6f;
+    overflow-x: auto;
+    transition: 0.5s;
+    padding-top: 60px;
+	z-index:1;
+}
+
+.hamburger a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+	z-index: 99;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.hamburger a:hover {
+    color: #f1f1f1;
+}
+
+.hamburger .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+#news {
+    position:absolute;
+    width:50%;
+    height: 42%;
+    top: 8%;
+    left:0;
+    overflow: scroll;
+}
+#graph {
+    position:fixed;
+    width:50%;
+    height:42%;
+    top: 8%;
+    left:50%;
+}
+#calculator {
+    position:fixed;
+    width:50%;
+    height:42%;
+    top:50%;
+    left:0;
+    
+}
+#something {
+    position:fixed;
+    width:50%;
+    height:42%;
+    top:50%;
+    left:50%;
+    
+}
+#something, #calculator {
+    border-top: ridge;
+}
+#graph, #something {
+    border-left: ridge;
+}
+ul {
+	list-style:none;
+	padding: 0 16px;
+}
+.seller-blocks > li {
+	padding: 16px 0;
+    border-bottom: ridge;
+}
+
+/** new css**/
+.col {
+    /* flex: 1; */
+     /* padding: 16px;  */
+     margin-left:20px; 
+}
+.dashbord-column {
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+
+    -webkit-column-rule: 1px outset black; /* Chrome, Safari, Opera */
+    -moz-column-rule: 1px outset black; /* Firefox */
+    column-rule: 1px outset black;
+}
+.border-right {
+    border-right: 1px solid #ddd;
+}
+/** new css **/
+
+.seller-heading {
+	font-size:30px;
+	position:absolute;
+	left:40%;
+	top:10px;
+}
+.seller-hamburger{
+	font-size:30px;
+	cursor:pointer;
+	float:left;
+	position:absolute;
+	top:5px;
+}
+.seller-statistics {
+	margin-top:60px;
+}
+.seller-stock {
+	padding-bottom:100px;
+}
+.seller-height {
+	height:300px;
+}
+.overflow-scroll {
+	overflow:scroll;
+}
+a {
+	text-decoration: none;
+}
+
+.trending_channel_value{
+    font-size:20px;
+}
+.trending_channel{
+    font-size:20px;
+    width:50%;
+}
+
+.trending_channel_row{
+    width:50%;
+}

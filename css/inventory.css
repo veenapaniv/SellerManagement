@@ -1,0 +1,65 @@
+.inventory-container {
+	padding:100px 20px;
+	overflow-x:auto
+}
+/**table {
+    border-collapse: collapse;
+    width: 100%;
+	overflow:scroll;
+}
+
+th, td {
+    text-align: left;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #232d6f;
+    color: white;
+}
+img
+ {
+ margin: 80px;
+ -webkit-transition: -webkit-transform 4s,opacity 2s;
+-moz-transition: -moz-transform 4s ,opacity 2s;
+-o-transition: -o-transform 4s ,opacity 2s;
+transition: transform 4s ,opacity 2s;
+}
+img:hover {
+-webkit-transform: rotate(360deg) scale(2, 2);
+-moz-transform: rotate(360deg) scale(2, 2);
+-o-transform: rotate(360deg) scale(2, 2);
+transform: rotate(360deg) scale(2, 2);
+}**/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+img
+{
+	-webkit-transition: -webkit-transform 4s,opacity 2s;
+	-moz-transition: -moz-transform 4s ,opacity 2s;
+	-o-transition: -o-transform 4s ,opacity 2s;
+	transition: transform 4s ,opacity 2s;
+}
+img:hover {
+	-webkit-transform: rotate(360deg) scale(2, 2);
+	-moz-transform: rotate(360deg) scale(2, 2);
+	-o-transform: rotate(360deg) scale(2, 2);
+	transform: rotate(360deg) scale(2, 2);
+}
+ul {
+	width: 100px; 
+	height: 100px; 
+	overflow: auto
+}

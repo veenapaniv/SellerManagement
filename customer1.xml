@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="veenaWeek7.xsl"?>
+<trendingNews>
+    <news>
+        <id>news1</id>
+        <heading>E-Commerce Drives Up Demand for Warehouse Space</heading>
+        <link>https://www.agprofessional.com/article/farmer-finds-success-e-commerce-will-buy-all-seed-online</link>
+        <news_snippet>Since switching to strip-till seven years ago, Lance Petersen's farm does all of its own fertilizer application. In 2018, he bought 54 tons of urea online via an e-commerce site. ( Lance Petersen )</news_snippet>
+    </news>
+    <news>
+        <id>news2</id>
+        <heading>UPS Cost Pressures Squeeze Gains From E-Commerce Investment Push</heading>
+        <link>https://www.adweek.com/digital/how-8-ecommerce-companies-are-competing-against-the-old-guard/</link>
+        <news_snippet>It’s no secret that the direct-to-consumer market is becoming like the New York City subway system: crowded and filled with people jockeying for position to the closest exit.</news_snippet>
+    </news>
+    <news>
+        <id>news3</id>
+        <heading>Local Ecommerce Players Around the World Are Giving Amazon and Walmart a 
+Run for Their Money</heading>
+        <link>https://www.adweek.com/digital/overseas-local-ecommerce-players-are-giving-amazon-and-walmart-a-run-for-their-money/</link>
+        <news_snippet>Sometimes it feels like Amazon is taking over the world—or, at the very least, the world of retail. In providing fast, free shipping, operating from a customer-centric philosophy and swallowing up specialized retailers, Amazon has, by some estimates, put itself on track to capture 49 percent of the U.S. ecommerce market this year.</news_snippet>
+    </news>
+    <news>
+        <id>news4</id>
+        <heading>Alibaba vs. Amazon: The Battle Of Disruptive Innovation Beyond Traditional 
+E-Commerce</heading>
+        <link>https://www.forbes.com/sites/danielnewman/2018/10/24/alibaba-vs-amazon-the-battle-of-disruptive-innovation-beyond-traditional-e-commerce/</link>
+        <news_snippet>https://www.forbes.com/sites/danielnewman/2018/10/24/alibaba-vs-amazon-the-battle-of-disruptive-innovation-beyond-traditional-e-commerce/</news_snippet>
+    </news>
+    <news>
+        <id>news5</id>
+        <heading>Farmer Finds Success With E-Commerce; Will Buy All Seed Online</heading>
+        <link>https://www.agprofessional.com/article/farmer-finds-success-e-commerce-will-buy-all-seed-online</link>
+        <news_snippet>Now the 31-year-old leads all the procurement efforts for he and his father’s 800-acre Minnesota farm. And every year, they are buying more and more online and via electronic communication.</news_snippet>
+    </news>
+    <news>
+        <id>news6</id>
+        <heading>How 8 Ecommerce Companies Are Competing Against the Old Guard</heading>
+        <link>https://www.adweek.com/digital/how-8-ecommerce-companies-are-competing-against-the-old-guard/</link>
+        <news_snippet>It’s no secret that the direct-to-consumer market is becoming like the New York City subway system: crowded and filled with people jockeying for position to the closest exit.</news_snippet>
+    </news>
+</trendingNews>

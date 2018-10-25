@@ -1,0 +1,25 @@
+.channels-container {
+	padding:30px 20px;
+}
+input[type=checkbox] {
+	display:none;
+}
+input[type=checkbox] + label
+{
+	background: url("../images/amazon.jpg") no-repeat;
+	background-size: 50%;
+	height: 250px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+}
+input[type=checkbox]:checked + label
+{
+	background: url("../images/amazon.jpg") no-repeat;
+	background-size: 50%;
+	height: 250px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+	opacity:0.2;
+}

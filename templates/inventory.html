@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Inventory</title>
+		<link rel="stylesheet" href="../css/dashboard.css"/>
+		<link rel="stylesheet" href="../css/inventory.css"/>
+		<script>
+			function editFunction(){
+				window.prompt("Please enter updated stock value");
+			}
+		</script>
+	</head>
+	<body>
+		<div class="seller-header">
+			<div class="seller-container">
+				<nav class="seller-nav">
+					<a href="dashboard.html">Dashboard</a>
+					<a href="channels.html">Channels</a>
+					<a href="inventory.html">Inventory</a>
+					<a href="#">Catalogue</a>
+					<a href="#">Contact Us</a>
+				</nav>
+			</div>
+		</div>
+		<div style="overflow-x:auto;" class="inventory-container">
+			<table>
+				<tr>
+					<th>Product ID</th>
+					<th>Product</th>
+					<th>Stock</th>
+					<th>Companies</th>
+					<th>In Stock</th>
+					<th>In Stock</th>
+					<th>In Stock</th>
+					<th>In Stock</th>
+					<th>In Stock</th>
+					<th>Action</th>
+				</tr>
+				<tr>
+					<td>749347</td>
+					<td><img border=3 height=100 width=100 src="../images/java.jpg"/></td>
+					<td>1</td>
+					<td>
+						<ul>
+							<li>Amazon</li>
+							<li>Etsy</li>
+						</ul>
+					</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>
+						<input type="button" value="Edit" onclick="editFunction()"/>
+						<input type="button" value="Delete"/>
+					</td>
+				</tr>
+				<tr>
+					<td>749347</td>
+					<td><img border=3 height=100 width=100 src="../images/trench.jpg"/></td>
+					<td>3</td>
+					<td>
+						<ul>
+							<li>Amazon</li>
+							<li>Etsy</li>
+						</ul>
+					</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>
+						<input type="button" value="Edit" onclick="editFunction()"/>
+						<input type="button" value="Delete"/>
+					</td>
+				</tr>
+				<tr>
+					<td>749347</td>
+					<td><img border=3 height=100 width=100 src="../images/mixer.jpg"/></td>
+					<td>20</td>
+					<td>
+						<ul>
+							<li>Amazon</li>
+							<li>Etsy</li>
+						</ul>
+					</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>
+						<input type="button" value="Edit" onclick="editFunction()"/>
+						<input type="button" value="Delete"/>
+					</td>
+				</tr>
+				<tr>
+					<td>749347</td>
+					<td><img border=3 height=100 width=100 src="../images/bank.jpg"/></td>
+					<td>35</td>
+					<td>
+						<ul style="width: 100px; height: 100px; overflow: auto">
+							<li>Amazon</li>
+							<li>Etsy</li>
+							<li>Etsy</li>
+							<li>Etsy</li>
+							<li>Etsy</li>
+							<li>Etsy</li>
+							<li>Etsy</li>
+							<li>Etsy</li>
+							<li>Etsy</li>
+							<li>Etsy</li>
+						</ul>
+					</td>
+					<td>749347</td>
+					<td>749347</td>
+					<td>749347</td>	
+					<td>749347</td>
+					<td>749347</td>
+					<td>
+						<input type="button" value="Edit" onclick="editFunction()"/>
+						<input type="button" value="Delete"/>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="seller-footer">
+			<div class="seller-container" style="padding-top: 20px;">Copyright &copy; 2018 Seller Management Cooperation</div>
+		</div>
+	</body>
+</html>

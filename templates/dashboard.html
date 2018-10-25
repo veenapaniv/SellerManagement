@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Seller Management Application</title>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/dashboard.js"></script>
+    <script>
+        function openHamburger() {
+            document.getElementById("hamburgerClass").style.width = "250px";
+        }
+
+        function closeHamburger() {
+            document.getElementById("hamburgerClass").style.width = "0";
+        }
+    </script>
+</head>
+<body>
+    <div class="seller-header">
+        <div class="seller-container">
+            <nav class="seller-nav">
+                <span class="seller-heading">SELLER MANAGEMENT</span>
+                <span class="seller-hamburger" onclick="openHamburger()">&#9776;</span>
+            </nav>
+        </div>
+        <div id="hamburgerClass" class="hamburger">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeHamburger()">&times;</a>
+            <a href="dashboard1.html">Dashboard</a>
+            <a href="channels.html">Channels</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="#">Catalogue</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-12 seller-statistics">
+            <div class="container">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+						<a data-toggle="tab" href="#today">Today</a>
+					</li>
+                    <li>
+						<a data-toggle="tab" href="#week">Last Week</a>
+					</li>
+                    <li>
+						<a data-toggle="tab" href="#month">Last Month</a>
+					</li>
+                </ul>
+                <div class="tab-content">
+                    <div id="today" class="tab-pane fade in active">
+                        <h3>Today</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> Sales</div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>Number of Sales: 20</li>
+                                            <li>Sites: Amazon, Ebay</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Cancelled</div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>Number of Sales: 20</li>
+                                            <li>Sites: Amazon, Ebay</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Returns</div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>Number of Sales: 20</li>
+                                            <li>Sites: Amazon, Ebay</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="week" class="tab-pane fade">
+                        <h3>Last Week</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> Sales</div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>Number of Sales: 20</li>
+                                            <li>Sites: Amazon, Ebay</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Cancelled</div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>Number of Sales: 20</li>
+                                            <li>Sites: Amazon, Ebay</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Returns</div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>Number of Sales: 20</li>
+                                            <li>Sites: Amazon, Ebay</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="month" class="tab-pane fade">
+                        <h3>Last Month</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> Sales</div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>Number of Sales: 20</li>
+                                            <li>Sites: Amazon, Ebay</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Cancelled</div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>Number of Sales: 20</li>
+                                            <li>Sites: Amazon, Ebay</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Returns</div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>Number of Sales: 20</li>
+                                            <li>Sites: Amazon, Ebay</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <hr/>
+        </div>
+    </div>
+    <div class="col col-md-12 text-center">
+       <h2>Sales Chart</h2>
+	   <img  src="../images/sales-graph.png" width="50%" height="50%"/>
+       <hr/>
+    </div>
+    <div class="col col-md-12 seller-stock">
+		<div class="col-sm-4 border-right seller-height container-fluid">
+            <h3>Trending Channels this Month</h3>
+<!--
+            <table class="table">
+                <thead>
+                    <tr class="d-flex">
+                        <td class="panel-heading col-1">Channel</td>
+                        <td class="panel-heading col-3">Sales</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex trending_channel_row">
+                    <td class="panel-body col-1">Amazon</td>
+                    <td class="panel-body col-3">200</td>
+                    </tr>
+                    <tr class="d-flex trending_channel_row">
+                        <td class="panel-body col-1">Ebay</td>
+                        <td class="panel-body col-3">200</td>
+                    </tr>
+                </tbody>
+            </table>
+-->
+            
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                   <th scope="col">#</th>
+                  <th scope="col">Channel</th>
+                  <th scope="col">Sales</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Amazon</td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Ebay</td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Etsy</td>
+                  <td>200</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+		<div class="col-sm-4 borders seller-height overflow-scroll" id="trendingNewsDiv">
+			<h3>Trending News</h3>
+			<ul class="list-group" id="trendingNewsList">
+<!--
+				<li class="list-group-item">
+					<a href="#news1" data-toggle="collapse" style="text-decoration:none;">Trending News 1</a>
+					<div id="news1" class="collapse">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				    </div>
+				</li>
+-->
+				
+			</ul>
+		</div>
+		<div class="col-sm-4 border-left seller-height">
+			<h2>Profit Calculator</h2>
+			<form action="">
+				<div class="form-group">
+				  <label for="price">Price:</label>
+				  <input type="text" class="form-control" id="price" placeholder="Enter price" name="price">
+				</div>
+				<div class="form-group">
+				  <label for="pwd">Shipping Price:</label>
+				  <input type="text" class="form-control" id="shipping" placeholder="Enter shipping price" name="shipping">
+				</div>
+				<div class="form-group">
+				  <label for="pwd">No. Of items:</label>
+				  <input type="text" class="form-control" id="stock" placeholder="No. Of items" name="stock">
+				</div>
+				<button type="button" class="btn btn-default">Calculate</button>
+				<strong>You have a profit of 50$!!.</strong>
+			</form>
+		</div>
+        <hr />
+    </div>
+    <div class="seller-footer">
+        <div class="seller-container" style="padding-top: 20px;">Copyright &copy; 2018 Seller Management Cooperation</div>
+    </div>
+</body>
+</html>
