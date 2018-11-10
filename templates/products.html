@@ -2,15 +2,15 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Edit Inventory</title>
+		<title>EAd Products</title>
 		<link rel="stylesheet" href="../css/dashboard.css" />
 		<link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
 		<script src="../js/third-party/jquery-3.3.1.min.js"></script>
 		<script src="../js/third-party/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="../css/inventory.css"/>
-		<script type="text/javascript" src="../js/edit.js"></script>
-		<script>
+		<script type="text/javascript" src="../js/products.js"></script>
+ 		<script>
 			function openHamburger() {
 				document.getElementById("hamburgerClass").style.width = "250px";
 			}
@@ -37,18 +37,18 @@
         </div>
     </div>
 		<div  class="inventory-container col-md-6">
-			<form>
+			<form id="productForm">
 				<div class="form-group">
-					<label for="product">Product ID</label>
-					<input type="text" class="form-control" id="productId" disabled = "true">
+					<label for="file">Product</label>
+					<input type="file" class="" id="file">
 				</div>
 				<div class="form-group">
 					<label for="stock">Stock</label>
-					<input type="text" class="form-control" id="stock">
+					<input type="text" class="form-control" id="stock" required>
 				</div>
 			    <div class="form-group">
-				<label for="companies">Choose Companies</label>
-						<select multiple class="form-control" id="companies">
+				<label for="companies">Choose companies</label>
+						<select multiple class="form-control" id="companies" required>
 							<option>Amazon</option>
 							<option>Wayfair</option>
 							<option>Etsy</option>
@@ -57,22 +57,14 @@
 						</select>
 			    </div>
 				<div class="form-group">
-					<label for="sold">Sold</label>
-					<input type="text" class="form-control" id="sold" disabled = "true">
+					<label for="amount">Amount</label>
+					<input type="text" class="form-control" id="amount" required>
 				</div>
    			    <div class="form-group">
-					<label for="returned">Returned</label>
-					<input type="text" class="form-control" id="returned" disabled = "true">
-				</div>
-				<div class="form-group">
-					<label for="amount">Amount</label>
-					<input type="text" class="form-control" id="amount">
-				</div>
-			    <div class="form-group">
 					<label for="shipping">Shipping</label>
-					<input type="text" class="form-control" id="shipping">
+					<input type="text" class="form-control" id="shipping" required/>
 				</div>
-				<button type="button" id="submitBtn" class="btn btn-default">Submit</button>
+				<input type="button" id="submitBtn" class="btn btn-default" value="Submit"/>
 			</form>
 		</div>
 		<div class="seller-footer">

@@ -1,6 +1,6 @@
 [{
 		"productId": "749123",
-		"product": "java",
+		"product": "java.jpg",
 		"stock": "1",
 		"companies": [
 			"Amazon",
@@ -16,7 +16,7 @@
 	},
 	{
 		"productId": "749345",
-		"product": "java",
+		"product": "trench.jpg",
 		"stock": "1",
 		"companies": [
 			"Amazon",
@@ -30,7 +30,7 @@
 	},
 	{
 		"productId": "749434",
-		"product": "java",
+		"product": "java.jpg",
 		"stock": "1",
 		"companies": [
 			"Amazon",
@@ -44,7 +44,7 @@
 	},
 	{
 		"productId": "749950",
-		"product": "java",
+		"product": "java.jpg",
 		"stock": "1",
 		"companies": [
 			"Wayfair",
@@ -58,7 +58,7 @@
 	},
 	{
 		"productId": "749384",
-		"product": "java",
+		"product": "java.jpg",
 		"stock": "1",
 		"companies": [
 			"Walmart",

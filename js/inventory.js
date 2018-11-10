@@ -6,8 +6,8 @@ $(document).ready(function(){
 	var editObj = JSON.parse(localStorage.getItem("editObj"));
 	if(!editObj) {
 		$.ajax({
-			type: "POST",
-			url: "http://localhost:8080/SellerManagement/inventory.json",
+			type: "GET",
+			url: "http://localhost:8080/SellerManagement/data/inventory.json",
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
 			success: function(data) {
@@ -37,7 +37,7 @@ $(document).ready(function(){
 					trow.appendChild(titles[invTitles[k]]);
 				} else if(invTitles[k] == "product") {
 					var img = document.createElement("img");
-					img.src = "../images/" + inventory[i].product + ".jpg";
+					img.src = "../images/" + inventory[i].product;
 					img.border=3;
 					img.height=100;
 					img.width=100;
