@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Inventory</title>
+		<link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../css/inventory.css"/>
+		<script type="text/javascript" src="../js/edit.js"></script>
+		<script>
+			function editFunction(){
+				window.prompt("Please enter updated stock value");
+			}
+			function openHamburger() {
+            document.getElementById("hamburgerClass").style.width = "250px";
+        }
+
+        function closeHamburger() {
+            document.getElementById("hamburgerClass").style.width = "0";
+        }
+		</script>
+	</head>
+	<body>
+		<div class="seller-header">
+        <div class="seller-container">
+            <nav class="seller-nav">
+                <span class="seller-heading">SELLER MANAGEMENT</span>
+                <span class="seller-hamburger" onclick="openHamburger()">&#9776;</span>
+            </nav>
+        </div>
+        <div id="hamburgerClass" class="hamburger">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeHamburger()">&times;</a>
+            <a href="dashboard1.html">Dashboard</a>
+            <a href="channels.html">Channels</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="#">Catalogue</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+		<div  class="inventory-container col-md-6">
+			<form>
+				<div class="form-group">
+					<label for="exampleFormControlInput1">Product ID</label>
+					<input type="text" class="form-control" id="productId" disabled = "true">
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlInput1">Stock</label>
+					<input type="text" class="form-control" id="stock" disabled = "true">
+				</div>
+			    <div class="form-group">
+				<label for="exampleFormControlSelect2">Example multiple select</label>
+						<select multiple class="form-control" id="companies">
+							<option>Amazon</option>
+							<option>Wayfair</option>
+							<option>Etsy</option>
+							<option>Shipt</option>
+							<option>Walmart</option>
+						</select>
+			    </div>
+				<div class="form-group">
+					<label for="exampleFormControlInput1">Sold</label>
+					<input type="text" class="form-control" id="sold" disabled = "true">
+				</div>
+   			    <div class="form-group">
+					<label for="exampleFormControlInput1">Returned</label>
+					<input type="text" class="form-control" id="returned" disabled = "true">
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlInput1">Amount</label>
+					<input type="text" class="form-control" id="amount">
+				</div>
+			    <div class="form-group">
+					<label for="exampleFormControlInput1">Shipping</label>
+					<input type="text" class="form-control" id="shipping">
+				</div>
+				<button type="button" id="submitBtn" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+		<div class="seller-footer">
+			<div class="seller-container" style="padding-top: 20px;">Copyright &copy; 2018 Seller Management Cooperation</div>
+		</div>
+	</body>
+</html>

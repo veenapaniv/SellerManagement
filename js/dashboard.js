@@ -1,9 +1,11 @@
+"use strict"
+
 $(document).ready(function(){
     //Ajax to get "Trending Channels this Month" info
 $(".seller-hamburger").click(function(){
      $.ajax({
     type: 'POST',
-    url: 'http://localhost/Demo/sampleJson',
+    url: 'http://localhost:8080/SellerManagement/sampleJson',
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
     success: function(jsonData) {
@@ -23,7 +25,7 @@ $(window).on("load", loadTrendingNews);
 
 function loadTrendingNews() {
     xhr = new XMLHttpRequest();
-    xhr.open("get", "http://localhost/Demo/customer1.xml",false);
+    xhr.open("get", "http://localhost:8080/SellerManagement/customer1.xml",false);
     xhr.send(null);
     newsArray = xhr.responseXML.getElementsByTagName("news");
     

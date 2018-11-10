@@ -1,0 +1,73 @@
+[{
+		"productId": "749123",
+		"product": "java",
+		"stock": "1",
+		"companies": [
+			"Amazon",
+			"Etsy",
+			"Shipt",
+			"Wayfair"
+		],
+		"sold": "1",
+		"returned": "1",
+		"amount": "3.95",
+		"shipping": "0.95",
+		"lastUpdated": "2015-12-12"
+	},
+	{
+		"productId": "749345",
+		"product": "java",
+		"stock": "1",
+		"companies": [
+			"Amazon",
+			"Etsy"
+		],
+		"sold": "1",
+		"returned": "1",
+		"amount": "44.5",
+		"shipping": "9.99",
+		"lastUpdated": "2018-01-01"
+	},
+	{
+		"productId": "749434",
+		"product": "java",
+		"stock": "1",
+		"companies": [
+			"Amazon",
+			"Shipt"
+		],
+		"sold": "1",
+		"returned": "1",
+		"amount": "14.00",
+		"shipping": "5.95",
+		"lastUpdated": "2018-10-30"
+	},
+	{
+		"productId": "749950",
+		"product": "java",
+		"stock": "1",
+		"companies": [
+			"Wayfair",
+			"Etsy"
+		],
+		"sold": "1",
+		"returned": "1",
+		"amount": "20.95",
+		"shipping": "2.55",
+		"lastUpdated": "2016-08-11"
+	},
+	{
+		"productId": "749384",
+		"product": "java",
+		"stock": "1",
+		"companies": [
+			"Walmart",
+			"Etsy"
+		],
+		"sold": "1",
+		"returned": "1",
+		"amount": "69.95",
+		"shipping": "10.95",
+		"lastUpdated": "2017-05-06"
+	}
+]
