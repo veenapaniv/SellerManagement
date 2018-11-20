@@ -1,6 +1,6 @@
 [{
 		"productId": "749123",
-		"product": "java.jpg",
+		"product": "headphones.jpg",
 		"stock": "1",
 		"companies": [
 			"Amazon",
@@ -44,7 +44,7 @@
 	},
 	{
 		"productId": "749950",
-		"product": "java.jpg",
+		"product": "bank.jpg",
 		"stock": "1",
 		"companies": [
 			"Wayfair",
@@ -58,7 +58,7 @@
 	},
 	{
 		"productId": "749384",
-		"product": "java.jpg",
+		"product": "drone.jpg",
 		"stock": "1",
 		"companies": [
 			"Walmart",

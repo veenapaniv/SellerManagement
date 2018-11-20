@@ -1,11 +1,13 @@
 body {
 	font-family: Poppins-Regular;
-	color: #fff;
+	font-weight: bold;
 	overflow: scroll;
+	color: #fff;
 }
 .seller-contactus {
-background-image: url('../images/contact.jpg');
+background-image: url('../images/contactus1.jpg');
 background-repeat : no-repeat;
+background-size: cover;
 }
 .container {
     border-radius: 5px;
@@ -14,7 +16,7 @@ background-repeat : no-repeat;
     height: 550px;
 	margin-top: 100px;
 	margin-bottom: 100px;
-	width: 41%;
+	width: 55%;
 }
 .contact {
 	margin-top: 20px;
@@ -31,4 +33,13 @@ background-repeat : no-repeat;
 }
 p {
 	font-size: 17px;
+}
+h4, h5, h3 {
+	font-weight: bold;
+}
+.text-center {
+	text-align: center;
+}
+a {
+	color: #fff;
 }

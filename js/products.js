@@ -1,16 +1,39 @@
 "use strict"
 
 
-$(document).ready(function(){
-	var fileName;
-	var inventoryData;
-	document.getElementById("file").addEventListener("change", function(){
-		var file = document.getElementById("file");
-		fileName = file.files.item(0).name;
-	});
-	document.getElementById("submitBtn").addEventListener("click", submitProduct, false);
-	function submitProduct(){
-		//if($("#productForm").valid()) {
+//variables for adding a product
+var fileName;
+var inventoryData;
+var intervalSet;
+var editVals = ["file", "stock", "companies", "amount", "shipping"];
+
+function disableSubmit() {
+	intervalSet = window.setInterval(function(){
+		for(var j in editVals) {
+			if(!$("#"+editVals[j]).val()) {
+				document.getElementById("submitBtn").disabled = true;
+				break;
+			} else {
+				document.getElementById("submitBtn").disabled = false;
+			}
+		}
+	}, 100)
+}//end function disableSubmit
+	
+//checking if valid amount/stock/shipping is entered
+function validate() {
+	if(!isNaN($("#amount").val()) && !isNaN($("#shipping").val()) && !isNaN($("#stock").val())) {
+		return true;
+	} else {
+		return false;
+	}
+}//end function validate
+
+//function triggered on click of submit
+function submitProduct(){
+	if(validate()) {
+		//valid data entered
+		//if object is present in localStorage then that object is used else ajax is invoked to get inventory data
 		var editObj = JSON.parse(localStorage.getItem("editObj"));
 			if(!editObj) {
 				$.ajax({
@@ -30,24 +53,58 @@ $(document).ready(function(){
 				inventoryData = editObj.data;
 				addInventory(editObj.data);
 			}
-		//}
+	} else {
+		alert("Please enter valid integer for stock/amount/shipping");
 	}
-	function addInventory(inventoryData){
-		var addProduct = inventoryData.length;
-		inventoryData[addProduct] = {};
-		inventoryData[addProduct].productId = Math.floor(1+Math.random() *700000);
-		inventoryData[addProduct].product = fileName;
-		inventoryData[addProduct].companies = $("#companies").val();
-		inventoryData[addProduct].stock = $("#stock").val();
-		inventoryData[addProduct].sold = 0;
-		inventoryData[addProduct].returned = 0;
-		inventoryData[addProduct].amount = $("#amount").val();
-		inventoryData[addProduct].shipping = $("#shipping").val();
-		inventoryData[addProduct].lastUpdated = new Date().toISOString().slice(0,10);
-		var editObj = new Object();
-		editObj.id = "";
-		editObj.data = inventoryData
-		localStorage.setItem("editObj", JSON.stringify(editObj));
-		window.location.replace("inventory.html")
-	}
-});
+}//end function submitProduct
+	
+//function invoked when data is retieved from ajax
+function addInventory(inventoryData){
+	//each item of product is set based on the values entered and set in localStorage and redirected to invantory page
+	var setObj = new Object();
+	setObj.productId = Math.floor(1+Math.random() *700000);
+	setObj.product = fileName;
+	setObj.companies = $("#companies").val();
+	setObj.stock = $("#stock").val();
+	setObj.sold = 0;
+	setObj.returned = 0;
+	setObj.amount = $("#amount").val();
+	setObj.shipping = $("#shipping").val();
+	setObj.lastUpdated = new Date().toISOString().slice(0,10);
+	inventoryData.unshift(setObj);
+	var editObj = new Object();
+	editObj.id = "";
+	editObj.data = inventoryData
+	localStorage.setItem("editObj", JSON.stringify(editObj));
+	window.location.replace("inventory.html")
+}//end function addInventory	
+	
+//hamburgerwidth change on click
+function openHamburger() {
+	$("#hamburgerClass").css("width", "250px");
+}//end function openHamburger
+
+function closeHamburger() {
+	$("#hamburgerClass").css("width", "0px");
+}//end function closeHamburger
+	
+//on load functionality
+window.addEventListener("load", function(){
+	//getting file name on change
+		document.getElementById("file").addEventListener("change", function(){
+			var file = document.getElementById("file");
+			fileName = file.files.item(0).name;
+		});
+		//disabling submit if values are not filled
+		disableSubmit();
+		document.getElementById("submitBtn").addEventListener("click", submitProduct, false);
+		//reset functionality--anonymous function
+		document.getElementById("resetBtn").addEventListener("click", function(){
+			location.reload();
+		}, false);
+		document.getElementById("backBtn").addEventListener("click", function(){
+			window.location.replace("inventory.html");
+		}, false);
+		$("#openHamburger").on("click",openHamburger);
+		$("#closeHamburger").on("click",closeHamburger);
+},false); //end on load

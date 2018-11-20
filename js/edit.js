@@ -3,24 +3,71 @@
 console.log(localStorage);
 
 $(document).ready(function(){
-	var editObj = JSON.parse(localStorage.getItem("editObj"));
+	//variables for editing
+	var intervalSet
+	var editObj = JSON.parse(localStorage.getItem("editObj")); // retrieving localStorage
 	var editData = editObj.data[editObj.id];
-	$("#productId").val(editData.productId);
-	$("#stock").val(editData.stock);
-	$("#companies").val(editData.companies);
-	$("#sold").val(editData.sold);
-	$("#returned").val(editData.returned);
-	$("#amount").val(editData.amount);
-	$("#shipping").val(editData.shipping);
-	document.getElementById("submitBtn").addEventListener("click", submitEdit, false);
+	var editVals = ["productId", "stock", "companies", "sold", "returned", "amount", "shipping"]; //items in inventory for looping
+	
+	//on load functionality
+	$(window).on("load",function() {
+		$("#submitBtn").on("click", submitEdit);
+		//values set on load
+		for(var i in editVals) {
+			$("#"+editVals[i]).val(editData[editVals[i]]);
+		}
+		//disable submit if all mandatory values are not filled
+		disableSubmit();
+		$("#backBtn").on("click", function(){
+			window.location.replace("inventory.html");
+		});
+		$("#openHamburger").on("click",openHamburger);
+		$("#closeHamburger").on("click",closeHamburger);
+	});//end on load
+	
+	function disableSubmit() {
+		intervalSet = window.setInterval(function(){
+			for(var j in editVals) {
+				if(!$("#"+editVals[j]).val()) {
+					$("#submitBtn").attr("disabled", true);
+					break;
+				} else {
+					$("#submitBtn").attr("disabled", false);
+				}
+			}
+		}, 100)
+	}// end function disableSubmit
+	
+	//checking if valid amount/shipping/stock is entered
+	function validate() {
+		if(!isNaN($("#amount").val()) && !isNaN($("#shipping").val()) && !isNaN($("#stock").val())) {
+			return true;
+		} else {
+			return false;
+		}
+	}//end function validate
+	
+	//function on click of submit
 	function submitEdit(){
-		var editObj = JSON.parse(localStorage.getItem("editObj"));
-		editObj.data[editObj.id].companies = $("#companies").val();
-		editObj.data[editObj.id].stock = $("#stock").val();
-		editObj.data[editObj.id].amount = $("#amount").val();
-		editObj.data[editObj.id].shipping = $("#shipping").val();
-		editObj.data[editObj.id].lastUpdated = new Date().toISOString().slice(0,10);;
-		localStorage.setItem("editObj", JSON.stringify(editObj));
-		window.location.replace("inventory.html")
-	}
+		if(validate()) {
+			var editObj = JSON.parse(localStorage.getItem("editObj"));
+			editObj.data[editObj.id].companies = $("#companies").val();
+			editObj.data[editObj.id].stock = $("#stock").val();
+			editObj.data[editObj.id].amount = $("#amount").val();
+			editObj.data[editObj.id].shipping = $("#shipping").val();
+			editObj.data[editObj.id].lastUpdated = new Date().toISOString().slice(0,10);
+			localStorage.setItem("editObj", JSON.stringify(editObj));
+			window.location.replace("inventory.html");
+		} else {
+			alert("Please enter valid integer for stock/amount/shipping");
+		}
+	}//end function submitEdit
+	//hamburgerwidth change on click
+	function openHamburger() {
+		$("#hamburgerClass").css("width", "250px");
+	}//end function openHamburger
+	
+	function closeHamburger() {
+		$("#hamburgerClass").css("width", "0px");
+	}//end function closeHamburger
 });

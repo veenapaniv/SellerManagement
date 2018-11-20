@@ -2,6 +2,11 @@
 
 $(document).ready(function(){
 	var newsArray;
+	$(window).on("load", function(){
+		loadTrendingNews();
+		$("#openHamburger").on("click",openHamburger);
+		$("#closeHamburger").on("click",closeHamburger);
+	});
     //Ajax to get "Trending Channels this Month" info
 	$(".seller-hamburger").click(function(){
 		$.ajax({
@@ -18,13 +23,13 @@ $(document).ready(function(){
 		});
 	})
     
-//function loadTrendingNews() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("get", "http://localhost:8080/SellerManagement/data/customer1.xml",false);
-    xhr.send(null);
-    newsArray = xhr.responseXML.getElementsByTagName("news");
-    displayNews();
-//}
+	function loadTrendingNews() {
+		var xhr = new XMLHttpRequest();
+		xhr.open("get", "http://localhost:8080/SellerManagement/data/customer1.xml",false);
+		xhr.send(null);
+		newsArray = xhr.responseXML.getElementsByTagName("news");
+		displayNews();
+	}
 
 	function displayNews() {
 		var parentUnorderedList = document.getElementById("trendingNewsList");
@@ -50,6 +55,13 @@ $(document).ready(function(){
 		}//end for
 	}//end function display()
 });
+	//hamburgerwidth change on click
+	function openHamburger() {
+		$("#hamburgerClass").css("width", "250px");
+	}//end function openHamburger
+	
+	function closeHamburger() {
+		$("#hamburgerClass").css("width", "0px");
+	}//end function closeHamburger
 
-//$(window).on("load", loadTrendingNews);
 

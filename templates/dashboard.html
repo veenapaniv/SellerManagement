@@ -6,33 +6,24 @@
     <link rel="stylesheet" href="../css/dashboard.css" />
     <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <script src="../js/third-party/jquery-3.3.1.min.js"></script>
+    <script src="../js/third-party/jquery-2.2.4.min.js"></script>
     <script src="../js/third-party/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/dashboard.js"></script>
-    <script>
-        function openHamburger() {
-            document.getElementById("hamburgerClass").style.width = "250px";
-        }
-
-        function closeHamburger() {
-            document.getElementById("hamburgerClass").style.width = "0";
-        }
-    </script>
 </head>
 <body>
     <div class="seller-header">
         <div class="seller-container">
             <nav class="seller-nav">
                 <span class="seller-heading">SELLER MANAGEMENT</span>
-                <span class="seller-hamburger" onclick="openHamburger()">&#9776;</span>
+                <span class="seller-hamburger" id="openHamburger">&#9776;</span>
             </nav>
         </div>
         <div id="hamburgerClass" class="hamburger">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeHamburger()">&times;</a>
+            <a href="javascript:void(0)" class="closebtn" id="closeHamburger">&times;</a>
             <a href="dashboard1.html">Dashboard</a>
             <a href="channels.html">Channels</a>
             <a href="inventory.html">Inventory</a>
-            <a href="catalogue.html">Catalogue</a>
+            <a href="catalogue.html">Catalog</a>
             <a href="contact.html">Contact Us</a>
         </div>
     </div>

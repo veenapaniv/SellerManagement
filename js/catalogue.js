@@ -6,8 +6,15 @@ $(document).ready(function(){
 	var url;
 	var trow = "";
 	var invTitles = ["productId", "product", "stock", "companies", "sold", "returned", "amount", "shipping", "lastUpdated", "owner"]
-	//var editObj = JSON.parse(localStorage.getItem("editObj"));
-	try {
+	
+	//on load function invoking
+	$(window).on("load", function(){
+		getInventory();
+		$("#openHamburger").on("click",openHamburger);
+		$("#closeHamburger").on("click",closeHamburger);
+	});
+	function getInventory(){
+		try {
 		xhr = new XMLHttpRequest();
 		url= "http://localhost:8080/SellerManagement/data/catalogue.json";
 		xhr.addEventListener("readystatechange", function(){
@@ -36,16 +43,21 @@ $(document).ready(function(){
 					trow += "<tr>" + td + "</tr>";
 				}
 				document.getElementById("tBody").innerHTML = trow;
-				/* var weather = JSON.parse(xhr.responseText); // received json file, parsed it as json and stored it in weather
-				var title = "<h3>" + weather.query.results.channel.title + "</h3>";
-				var todaysWeather = "<p>" + weather.query.results.channel.item.description + "</p>";
-				var todaysDate = "<p>" + weather.query.results.channel.item.pubDate + "</p>";
-				document.getElementById("jsonJsOut").innerHTML = title + todaysDate + todaysWeather; */
 			} //end if
 		}, false);
 		xhr.open("GET", url, true);
 		xhr.send();
-	} catch(ex) {
-		alert("XHR FAILED");
-	} //end try   
+		} catch(ex) {
+			alert("XHR FAILED");
+		} //end try catch
+	}//end function getInventory 
+	
+	//hamburgerwidth change on click
+	function openHamburger() {
+		$("#hamburgerClass").css("width", "250px");
+	}//end function openHamburger
+	
+	function closeHamburger() {
+		$("#hamburgerClass").css("width", "0px");
+	}//end function closeHamburger
 });

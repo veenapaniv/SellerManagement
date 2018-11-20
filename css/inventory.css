@@ -43,3 +43,10 @@ button {
 .edit-container {
 	width: 40%;
 }
+h3 {
+	margin-top: 12px;
+	color: #232d6f;
+}
+.asterisk {
+	color: red;
+}

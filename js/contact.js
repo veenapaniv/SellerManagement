@@ -56,8 +56,19 @@ function setPhoneInfo(contactData) {
 	}
 }
 
+//hamburgerwidth change on click
+function openHamburger() {
+	$("#hamburgerClass").css("width", "250px");
+}//end function openHamburger
+
+function closeHamburger() {
+	$("#hamburgerClass").css("width", "0px");
+}//end function closeHamburger
+	
 window.addEventListener("load", function(){
 	$("#header").text("Contact Us");
-	$("p").append(document.createTextNode("Swing by for a cup of coffee, or contact us:"));
+	$("p").append(document.createTextNode("Swing by for a cup of coffee, or call us:"));
 	setContactInfo();
+	$("#openHamburger").on("click",openHamburger);
+	$("#closeHamburger").on("click",closeHamburger);
 });
