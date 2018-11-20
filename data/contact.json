@@ -1,0 +1,22 @@
+{
+	"address1": "Seller Management Cooperation ",
+	"address2": "1101 NW Innovation Parkway, ",
+	"address3": "Lee's Summit, MO 64086",
+	"contact": [{
+			"name": "Veenapani Veena",
+			"position": "Account Manager",
+			"phone": "913-203-6853"
+		},
+		{
+			"name": "Prasanna",
+			"position": "Account Manager",
+			"phone": "913-203-6853"
+		},
+		{
+			"name": "Swathi Uppu",
+			"position": "Account Manager",
+			"phone": "913-203-6853"
+		}
+	],
+	"email": "sellermgmt.support@gmail.com"
+}

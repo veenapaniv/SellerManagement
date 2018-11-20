@@ -5,19 +5,23 @@ $(document).ready(function(){
 	var invTitles = ["productId", "product", "stock", "companies", "sold", "returned", "amount", "shipping", "lastUpdated"]
 	var editObj = JSON.parse(localStorage.getItem("editObj"));
 	if(!editObj) {
-		$.ajax({
-			type: "GET",
-			url: "http://localhost:8080/SellerManagement/data/inventory.json",
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
-			success: function(data) {
-				inventoryData = data;
-				displayInventory(data);
-			},
-			error: function() {
-				alert("Data not found");
-			}
-		});
+		try {
+			$.ajax({
+				type: "GET",
+				url: "http://localhost:8080/SellerManagement/data/inventory.json",
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function(data) {
+					inventoryData = data;
+					displayInventory(data);
+				},
+				error: function() {
+					alert("Data not found");
+				}
+			});
+		} catch(e) {
+			alert("ajax failed");
+		}
 	} else {
 		inventoryData = editObj.data;
 		displayInventory(editObj.data);
@@ -28,8 +32,7 @@ $(document).ready(function(){
 		var tBody = document.getElementById("tBody");
 		for(var i in inventory) {
 			var trow = document.createElement("tr");
-			
-			
+			trow.setAttribute("id", "invRow"+i)
 			for(var k in invTitles) {
 				titles[invTitles[k]] = document.createElement("td");
 				if(invTitles[k] != "companies" && invTitles[k] != "product") {
@@ -54,17 +57,17 @@ $(document).ready(function(){
 			trow.appendChild(titles.companies);
 				}
 			}
-			var editButton = document.createElement("input");
-			editButton.value="Edit";
-			editButton.type="button";
-			editButton.id= i;
+			var editButton = document.createElement("button");
+			editButton.append(document.createTextNode("Edit"));
+			editButton.setAttribute("class", "btn btn-success");
+			editButton.setAttribute("id", i);
 			editButton.addEventListener("click", function(e){
 				editFunction(e.target.id);
 			}, false);
-			var deleteButton = document.createElement("input");
-			deleteButton.value="Delete";
-			deleteButton.type="button";
-			deleteButton.id= i;
+			var deleteButton = document.createElement("button");
+			deleteButton.append(document.createTextNode("Delete"));
+			deleteButton.setAttribute("id", i);
+			deleteButton.setAttribute("class", "btn btn-danger");
 			deleteButton.addEventListener("click", function(e){
 				deleteFunction(e.target.id);
 			}, false);
@@ -85,9 +88,9 @@ $(document).ready(function(){
 		window.location.replace("edit.html");
 	}
 	function deleteFunction(id) {
-		inventoryData.splice(id,1);
+		var trowId = document.getElementById("invRow"+id);
 		var tBody = document.getElementById("tBody");
-		tBody.innerHTML = "";
-		displayInventory(inventoryData);
+		tBody.removeChild(trowId);
+		inventoryData.splice(id,1);
 	}  
 });

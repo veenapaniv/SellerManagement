@@ -2,15 +2,15 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Add Products</title>
+		<title>Catalogue</title>
 		<link rel="stylesheet" href="../css/dashboard.css" />
 		<link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
 		<script src="../js/third-party/jquery-3.3.1.min.js"></script>
 		<script src="../js/third-party/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="../css/inventory.css"/>
-		<script type="text/javascript" src="../js/products.js"></script>
- 		<script>
+		<script type="text/javascript" src="../js/catalogue.js"></script>
+		<script>
 			function openHamburger() {
 				document.getElementById("hamburgerClass").style.width = "250px";
 			}
@@ -36,36 +36,24 @@
             <a href="contact.html">Contact Us</a>
         </div>
     </div>
-		<div  class="inventory-container edit-container">
-			<form id="productForm">
-				<div class="form-group">
-					<label for="file">Product</label>
-					<input type="file" class="" id="file">
-				</div>
-				<div class="form-group">
-					<label for="stock">Stock</label>
-					<input type="text" class="form-control" id="stock" required>
-				</div>
-			    <div class="form-group">
-				<label for="companies">Choose companies</label>
-						<select multiple class="form-control" id="companies" required>
-							<option>Amazon</option>
-							<option>Wayfair</option>
-							<option>Etsy</option>
-							<option>Shipt</option>
-							<option>Walmart</option>
-						</select>
-			    </div>
-				<div class="form-group">
-					<label for="amount">Amount</label>
-					<input type="text" class="form-control" id="amount" required>
-				</div>
-   			    <div class="form-group">
-					<label for="shipping">Shipping</label>
-					<input type="text" class="form-control" id="shipping" required/>
-				</div>
-				<input type="button" id="submitBtn" class="btn btn-default" value="Submit"/>
-			</form>
+		<div style="overflow-x:auto;" class="inventory-container">
+			<table>
+				<thead>
+					<tr>
+					<th>Product ID</th>
+					<th>Product</th>
+					<th>Stock</th>
+					<th>Companies</th>
+					<th>Sold</th>
+					<th>Returned</th>
+					<th>Amount</th>
+					<th>Shipping</th>
+					<th>Last Updated</th>
+					<th>Owner</th>
+				</tr>
+				</thead>
+				<tbody id="tBody"></tbody>
+			</table>
 		</div>
 		<div class="seller-footer">
 			<div class="seller-container" style="padding-top: 20px;">Copyright &copy; 2018 Seller Management Cooperation</div>

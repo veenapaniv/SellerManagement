@@ -1,0 +1,78 @@
+[{
+		"productId": "749123",
+		"product": "java.jpg",
+		"stock": "1",
+		"companies": [
+			"Amazon",
+			"Etsy",
+			"Shipt",
+			"Wayfair"
+		],
+		"sold": "1",
+		"returned": "1",
+		"amount": "3.95",
+		"shipping": "0.95",
+		"lastUpdated": "2015-12-12",
+		"owner": "Walter White"
+	},
+	{
+		"productId": "749345",
+		"product": "trench.jpg",
+		"stock": "1",
+		"companies": [
+			"Amazon",
+			"Etsy"
+		],
+		"sold": "1",
+		"returned": "1",
+		"amount": "44.5",
+		"shipping": "9.99",
+		"lastUpdated": "2018-01-01",
+		"owner": "Harvey Specter"
+	},
+	{
+		"productId": "749434",
+		"product": "java.jpg",
+		"stock": "1",
+		"companies": [
+			"Amazon",
+			"Shipt"
+		],
+		"sold": "1",
+		"returned": "1",
+		"amount": "14.00",
+		"shipping": "5.95",
+		"lastUpdated": "2018-10-30",
+		"owner": "Saul Goodman"
+	},
+	{
+		"productId": "749950",
+		"product": "java.jpg",
+		"stock": "1",
+		"companies": [
+			"Wayfair",
+			"Etsy"
+		],
+		"sold": "1",
+		"returned": "1",
+		"amount": "20.95",
+		"shipping": "2.55",
+		"lastUpdated": "2016-08-11",
+		"owner": "Micael Ross"
+	},
+	{
+		"productId": "749384",
+		"product": "java.jpg",
+		"stock": "1",
+		"companies": [
+			"Walmart",
+			"Etsy"
+		],
+		"sold": "1",
+		"returned": "1",
+		"amount": "69.95",
+		"shipping": "10.95",
+		"lastUpdated": "2017-05-06",
+		"owner": "Randall Pearson"
+	}
+]
