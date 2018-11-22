@@ -30,7 +30,7 @@
     <div class="row">
         <div class="col col-md-12 seller-statistics">
             <div class="container">
-                <ul class="nav nav-tabs">
+                <ul class="seller_statistics_nav nav nav-tabs">
                     <li class="active">
 						<a data-toggle="tab" href="#today">Today</a>
 					</li>
@@ -45,35 +45,35 @@
                     <div id="today" class="tab-pane fade in active">
                         <h3>Today</h3>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 confirmed">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"> Sales</div>
+                                    <div class="panel-heading"> Confirmed</div>
                                     <div class="panel-body">
                                         <ul>
-                                            <li>Number of Sales: 20</li>
-                                            <li>Sites: Amazon, Ebay</li>
+                                            <li class="sales"></li>
+                                            <li class="sites"></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 cancelled">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Cancelled</div>
                                     <div class="panel-body">
                                         <ul>
-                                            <li>Number of Sales: 20</li>
-                                            <li>Sites: Amazon, Ebay</li>
+                                            <li class="sales"></li>
+                                            <li class="sites"></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 return">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Returns</div>
                                     <div class="panel-body">
                                         <ul>
-                                            <li>Number of Sales: 20</li>
-                                            <li>Sites: Amazon, Ebay</li>
+                                            <li class="sales"></li>
+                                            <li class="sites"></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -83,35 +83,35 @@
                     <div id="week" class="tab-pane fade">
                         <h3>Last Week</h3>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 confirmed">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"> Sales</div>
+                                    <div class="panel-heading"> Confirmed</div>
                                     <div class="panel-body">
                                         <ul>
-                                            <li>Number of Sales: 20</li>
-                                            <li>Sites: Amazon, Ebay</li>
+                                            <li class="sales"></li>
+                                            <li class="sites"></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 cancelled">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Cancelled</div>
                                     <div class="panel-body">
                                         <ul>
-                                            <li>Number of Sales: 20</li>
-                                            <li>Sites: Amazon, Ebay</li>
+                                            <li class="sales"></li>
+                                            <li class="sites"></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 return">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Returns</div>
                                     <div class="panel-body">
                                         <ul>
-                                            <li>Number of Sales: 20</li>
-                                            <li>Sites: Amazon, Ebay</li>
+                                            <li class="sales"></li>
+                                            <li class="sites"></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -121,35 +121,35 @@
                     <div id="month" class="tab-pane fade">
                         <h3>Last Month</h3>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 confirmed">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"> Sales</div>
+                                    <div class="panel-heading"> Confirmed</div>
                                     <div class="panel-body">
                                         <ul>
-                                            <li>Number of Sales: 20</li>
-                                            <li>Sites: Amazon, Ebay</li>
+                                            <li class="sales"></li>
+                                            <li class="sites"></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 cancelled">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Cancelled</div>
                                     <div class="panel-body">
                                         <ul>
-                                            <li>Number of Sales: 20</li>
-                                            <li>Sites: Amazon, Ebay</li>
+                                            <li class="sales"></li>
+                                            <li class="sites"></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 return">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Returns</div>
                                     <div class="panel-body">
                                         <ul>
-                                            <li>Number of Sales: 20</li>
-                                            <li>Sites: Amazon, Ebay</li>
+                                            <li class="sales"></li>
+                                            <li class="sites"></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -163,42 +163,22 @@
     </div>
     <div class="col col-md-12 text-center">
        <h2>Sales Chart</h2>
-	   <img  src="../images/sales-graph.png" width="50%" height="50%"/>
+	   <img id="sales_image" width="50%" height="50%"/>
        <hr/>
     </div>
     <div class="col col-md-12 seller-stock">
 		<div class="col-sm-4 border-right seller-height container-fluid">
-            <h3>Trending Channels this Month</h3>
-<!--
-            <table class="table">
-                <thead>
-                    <tr class="d-flex">
-                        <td class="panel-heading col-1">Channel</td>
-                        <td class="panel-heading col-3">Sales</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="d-flex trending_channel_row">
-                    <td class="panel-body col-1">Amazon</td>
-                    <td class="panel-body col-3">200</td>
-                    </tr>
-                    <tr class="d-flex trending_channel_row">
-                        <td class="panel-body col-1">Ebay</td>
-                        <td class="panel-body col-3">200</td>
-                    </tr>
-                </tbody>
-            </table>
--->
-            
-            <table class="table table-striped">
+            <h3>Trending Products this Month</h3>
+            <table class="table table-striped" id="trending_products">
               <thead>
                 <tr>
                    <th scope="col">#</th>
-                  <th scope="col">Channel</th>
+                  <th scope="col">Product Name</th>
                   <th scope="col">Sales</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="top_products">
+<!--
                 <tr>
                   <th scope="row">1</th>
                   <td>Amazon</td>
@@ -214,6 +194,7 @@
                   <td>Etsy</td>
                   <td>200</td>
                 </tr>
+-->
               </tbody>
             </table>
         </div>
@@ -237,19 +218,26 @@
 			<h2>Profit Calculator</h2>
 			<form action="">
 				<div class="form-group">
-				  <label for="price">Price:</label>
-				  <input type="text" class="form-control" id="price" placeholder="Enter price" name="price">
+				  <label for="price">Product:</label>
+<!--				  <input type="text" class="form-control" id="price" placeholder="Enter price" name="price">-->
+                            <p>
+                                <select id="cust_products"></select>
+                            </p>
+                            <p>
+                                <label id="cust_prod_cost" style="margin-left: :20px;">Cost: </label>
+                                <input type="text" class="form-control" id="price" name="price" disabled="true"/>
+                            </p>
 				</div>
 				<div class="form-group">
 				  <label for="pwd">Shipping Price:</label>
 				  <input type="text" class="form-control" id="shipping" placeholder="Enter shipping price" name="shipping">
 				</div>
 				<div class="form-group">
-				  <label for="pwd">No. Of items:</label>
+				  <label for="qty">Quantity:</label>
 				  <input type="text" class="form-control" id="stock" placeholder="No. Of items" name="stock">
 				</div>
-				<button type="button" class="btn btn-default">Calculate</button>
-				<strong>You have a profit of 50$!!.</strong>
+				<button type="button" class="btn btn-default" id="calculate">Calculate</button>
+				<strong id="result"></strong>
 			</form>
 		</div>
         <hr />

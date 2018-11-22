@@ -16,7 +16,7 @@ $(document).ready(function(){
 	function getInventory(){
 		try {
 		xhr = new XMLHttpRequest();
-		url= "http://localhost:8080/SellerManagement/data/catalogue.json";
+		url= "http://localhost/SellerManagement/data/catalogue.json";
 		xhr.addEventListener("readystatechange", function(){
 			if(xhr.readyState == 4 && xhr.status == 200 && xhr.responseText) {
 				var responseData = JSON.parse(xhr.responseText);

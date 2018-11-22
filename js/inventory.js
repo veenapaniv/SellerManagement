@@ -19,7 +19,7 @@ $(document).ready(function(){
 			try {
 				$.ajax({
 					type: "GET",
-					url: "http://localhost:8080/SellerManagement/data/inventory.json",
+					url: "http://localhost/SellerManagement/data/inventory.json",
 					contentType: "application/json; charset=utf-8",
 					dataType: "json",
 					success: function(data) {

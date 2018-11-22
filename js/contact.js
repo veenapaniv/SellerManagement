@@ -5,7 +5,7 @@ function setContactInfo() {
 	try {
 		$.ajax({
 			type: "GET",
-			url: "http://localhost:8080/SellerManagement/data/contact.json",
+			url: "http://localhost/SellerManagement/data/contact.json",
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
 			success: function(data) {
