@@ -143,6 +143,12 @@ ul {
 	left:40%;
 	top:10px;
 }
+.seller-welcome-heading{
+    font-size:25px;
+	position:absolute;
+	left:40%;
+	top:10px;
+}
 .seller-hamburger{
 	font-size:30px;
 	cursor:pointer;
