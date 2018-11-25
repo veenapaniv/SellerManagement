@@ -16,8 +16,8 @@ function disableSubmit() {
 			} else {
 				document.getElementById("submitBtn").disabled = false;
 			}
-		}
-	}, 100)
+		}//end for
+	}, 100)//end interval
 }//end function disableSubmit
 	
 //checking if valid amount/stock/shipping is entered
@@ -26,7 +26,7 @@ function validate() {
 		return true;
 	} else {
 		return false;
-	}
+	}//end if/else
 }//end function validate
 
 //function triggered on click of submit
@@ -55,7 +55,7 @@ function submitProduct(){
 			}
 	} else {
 		alert("Please enter valid integer for stock/amount/shipping");
-	}
+	}//end if/else
 }//end function submitProduct
 	
 //function invoked when data is retieved from ajax

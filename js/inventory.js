@@ -5,6 +5,8 @@ $(document).ready(function(){
 	var inventoryData;
 	var invTitles = ["productId", "product", "stock", "companies", "sold", "returned", "amount", "shipping", "lastUpdated"];
 	var editObj = JSON.parse(localStorage.getItem("editObj")); //retrieving localStorage
+	
+	//event listeners on load
 	$(window).on("load",function() {
 		retrieveInventory();
 		$("#openHamburger").on("click",openHamburger);
@@ -12,7 +14,9 @@ $(document).ready(function(){
 		$("#addProdBtn").on("click", function(){
 			window.location.replace("products.html");
 		});
-	});
+	});//end function onload
+	
+	//ajax call to retrieve inventory
 	function retrieveInventory(){
 		//if object is present in localStorage then that object is used else ajax is invoked to get inventory data
 		if(!editObj) {
@@ -32,12 +36,63 @@ $(document).ready(function(){
 				});
 			} catch(e) {
 				alert("ajax failed");
-			}
+			}//end try catch
 		} else {
 			inventoryData = editObj.data;
 			displayInventory(editObj.data);
 		}
-	}
+	}//end function retrieveInventory
+	
+	//create image in table
+	function createImg(i, titles, trow, inventory) {
+		var img = document.createElement("img");
+		img.src = "../images/" + inventory[i].product;
+		img.border=3;
+		img.height=100;
+		img.width=100;
+		titles.product.appendChild(img);
+		trow.appendChild(titles.product);
+	}//end function createImg
+	
+	//create list in table
+	function createList(inventory, i, titles, trow){
+		var ul = document.createElement("ul");
+		for(var j=0;j<inventory[i].companies.length;j++) {
+			var li = document.createElement("li");
+			li.innerHTML = inventory[i].companies[j];
+			ul.appendChild(li);
+		}
+		titles.companies.appendChild(ul);
+		trow.appendChild(titles.companies);
+	}//end function createList
+	
+	//create edit button
+	function createEditButton(i){
+		var editButton = document.createElement("button");
+		editButton.append(document.createTextNode("Edit"));
+		editButton.setAttribute("class", "btn btn-success");
+		editButton.setAttribute("id", i);
+		editButton.addEventListener("click", function(e){
+			editFunction(e.target.id);
+		}, false);
+		return editButton;
+	}//end function editButton
+	
+	//create delete button
+	function createDeleteButton(i) {
+		var deleteButton = document.createElement("button");
+		deleteButton.append(document.createTextNode("Delete"));
+		deleteButton.setAttribute("id", i);
+		deleteButton.setAttribute("class", "btn btn-danger");
+		//modal is displayed on click of delete button
+		deleteButton.setAttribute("data-toggle", "modal");
+		deleteButton.setAttribute("data-target", "#myModal")
+		deleteButton.addEventListener("click", function(e){
+			deleteFunction(e.target.id);
+		}, false);
+		return deleteButton
+	}//end function createDeleteButton
+	
 	//inventory is displayed in a table after retrieving data
 	function displayInventory(invData) {
 		var inventory = invData;
@@ -53,43 +108,15 @@ $(document).ready(function(){
 					titles[invTitles[k]].innerHTML = inventory[i][invTitles[k]];
 					trow.appendChild(titles[invTitles[k]]);
 				} else if(invTitles[k] == "product") {
-					var img = document.createElement("img");
-					img.src = "../images/" + inventory[i].product;
-					img.border=3;
-					img.height=100;
-					img.width=100;
-					titles.product.appendChild(img);
-					trow.appendChild(titles.product);
+					createImg(i, titles, trow, inventory);
 				} else {
-					var ul = document.createElement("ul");
-					for(var j=0;j<inventory[i].companies.length;j++) {
-					var li = document.createElement("li");
-					li.innerHTML = inventory[i].companies[j];
-					ul.appendChild(li);
-			}
-			titles.companies.appendChild(ul);
-			trow.appendChild(titles.companies);
+					createList(inventory, i, titles, trow);
 				}
-			}
+			}//end for
 			//functionality for edit button in table
-			var editButton = document.createElement("button");
-			editButton.append(document.createTextNode("Edit"));
-			editButton.setAttribute("class", "btn btn-success");
-			editButton.setAttribute("id", i);
-			editButton.addEventListener("click", function(e){
-				editFunction(e.target.id);
-			}, false);
+			var editButton = createEditButton(i);
 			//functionality for delete button in table
-			var deleteButton = document.createElement("button");
-			deleteButton.append(document.createTextNode("Delete"));
-			deleteButton.setAttribute("id", i);
-			deleteButton.setAttribute("class", "btn btn-danger");
-			//modal is displayed on click of delete button
-			deleteButton.setAttribute("data-toggle", "modal");
-			deleteButton.setAttribute("data-target", "#myModal")
-			deleteButton.addEventListener("click", function(e){
-				deleteFunction(e.target.id);
-			}, false);
+			var deleteButton = createDeleteButton(i);
 			//items appending to their parent
 			titles.action = document.createElement("td");
 			titles.action.appendChild(editButton);
@@ -103,8 +130,9 @@ $(document).ready(function(){
 	//adding modal functionality on click of delete
 	function deleteFunction(id){
 		var deleteProduct =document.getElementById("deleteProduct");
+		localStorage.setItem("currentId", id);
 		deleteProduct.addEventListener("click", function(e){
-				deleteProducts(id);
+				deleteProducts();
 			}, false);
 	}//end function deleteFunction
 	
@@ -118,10 +146,13 @@ $(document).ready(function(){
 	}//end function editFunction
 	
 	//this function is invoked when yes is clicked in delete modal
-	function deleteProducts(id) {
+	function deleteProducts() {
+		var id = localStorage.getItem("currentId");
 		var trowId = document.getElementById("invRow"+id);
 		var tBody = document.getElementById("tBody");
-		tBody.removeChild(trowId);
+		if(trowId && trowId.parentNode) {
+			trowId.parentNode.removeChild(trowId);
+		}
 		inventoryData.splice(id,1);
 	}//end function deleteProduct 
 	

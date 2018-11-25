@@ -15,7 +15,8 @@ $(document).ready(function(){
 		onloadChannels();
         //when user checks the checkbox, toggle the checkbox and add selection to the list
 		onChangeChannels();
-	});
+	});//end on load function
+	
 	//hamburgerwidth change on click
 	function openHamburger() {
 		$("#hamburgerClass").css("width", "250px");
@@ -41,17 +42,17 @@ $(document).ready(function(){
 			var label = document.createElement("label");
 			label.setAttribute("for", channels[i].name);
 			channelsContainer.appendChild(label);
-		}
-	}
+		}//end for
+	}//end function displayCheckBoxes
 	
 	function onloadChannels(){
         //on load of the page initially, few of the channels are defaultly selected which are stored in an array: onloadSelected
 		for(var j=0; j<onloadSelected.length; j++){
 			$("#"+onloadSelected[j].name).attr("checked", "checked");
-		}
+		}//end for
         //function call to display the channels selected defaultly in a separate div
 		displaySelected(onloadSelected, "selectedChannels");
-	}
+	}//end function onloadChannels
 
 	function displaySelected(onloadSelected, targetId){
         //get the div into which the list of selections is appended
@@ -59,7 +60,7 @@ $(document).ready(function(){
         //check if the div already has items, if it does remove them
 		if(selected.hasChildNodes()) {
 			selected.innerHTML = "";
-		}
+		}//end if
         //create the list dynamically and append each item in the array "onloadSelected"
 		var ul = document.createElement("ul");
         ul.setAttribute("class","list-group");
@@ -69,9 +70,9 @@ $(document).ready(function(){
             li.setAttribute("class","list-group-item");
 			li.innerHTML = onloadSelected[k].value;
 			ul.appendChild(li);
-		}
+		}//end for
 		$("#"+targetId).append(ul)
-	}
+	}//end function displaySelected
 
 	function onChangeChannels() {
         //onclick event when a user clicks on the checkbox, push the selection to the onloadSelected array and if the property of the attr "checked" is false, remove the item from the array
@@ -85,10 +86,11 @@ $(document).ready(function(){
 						onloadSelected.splice(l, 1);
 					}
 				}
-			}
+			}//end if/else
 			displaySelected(onloadSelected, "selectedChannels");
 		});		
-	}
+	}//end function onChangeChannels
+	
 	function saveFunction(){
         //if user has not selected any item, display an alert with an error
 		if(onloadSelected.length == 0){
@@ -97,10 +99,11 @@ $(document).ready(function(){
             //else display the selection in the popup and check if the user really wants to save his selection
 			displaySelected(onloadSelected, "displayingMsg");
 			$("#infoModel").modal();
-		}
-	}
+		}//end if/else
+	}//end function saveFunction
+
 	function okFunction(){
         //when user clicks on ok, display a message saying the changes will take effect after 24 hours
 		$("#alertMsg").show();
-	}
+	}//end function okFunction
 });

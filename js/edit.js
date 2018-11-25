@@ -1,7 +1,5 @@
 "use strict"
 
-console.log(localStorage);
-
 $(document).ready(function(){
 	//variables for editing
 	var intervalSet
@@ -34,8 +32,8 @@ $(document).ready(function(){
 				} else {
 					$("#submitBtn").attr("disabled", false);
 				}
-			}
-		}, 100)
+			}//end if/else
+		}, 100);//end interval`
 	}// end function disableSubmit
 	
 	//checking if valid amount/shipping/stock is entered
@@ -44,7 +42,7 @@ $(document).ready(function(){
 			return true;
 		} else {
 			return false;
-		}
+		}//end if/else
 	}//end function validate
 	
 	//function on click of submit
@@ -60,8 +58,9 @@ $(document).ready(function(){
 			window.location.replace("inventory.html");
 		} else {
 			alert("Please enter valid integer for stock/amount/shipping");
-		}
+		}//end if/else
 	}//end function submitEdit
+
 	//hamburgerwidth change on click
 	function openHamburger() {
 		$("#hamburgerClass").css("width", "250px");
