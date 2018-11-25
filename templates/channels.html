@@ -10,17 +10,8 @@
 		<script src="../js/third-party/jquery-2.2.4.min.js"></script>
 		<script src="../js/third-party/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../js/channels.js"></script>
-		<script>
-        function openHamburger() {
-            document.getElementById("hamburgerClass").style.width = "250px";
-        }
-
-        function closeHamburger() {
-            document.getElementById("hamburgerClass").style.width = "0";
-        }
-    </script>
 	</head>
-	<body>
+	<body >
 		<div class="seller-header">
 			<div class="seller-container">
 				<nav class="seller-nav">
@@ -37,15 +28,46 @@
 				<a href="contact.html">Contact Us</a>
 			</div>
 		</div>
-		<div class="channels-container">
-			<h2>Please select atleast one of the below channels</h2>
+		<div class="alert alert-success" role="alert" id="alertMsg">
+			Your changes will be updated in 24 hours.<a href="inventory.html">Click here</a> to go to inventory.
 		</div>
 		<div class="channels-container">
-			<input type="checkbox" name="amazon" value="amazon" id="amazon"/>
-			<label for="amazon"></label> 
+			<h2><br/>Please select atleast one of the below channels</h2>
 		</div>
+		<div class="col-md-8">
+			<div class="channels-container" id="channels-container"></div>
+		</div>
+        
+		<div class = "col-md-4">
+			<div class="selected">
+				<h3>You have selected: </h3>
+				<div id="selectedChannels"></div>
+			</div>
+		</div>
+        <button type="button" class="btn btn-primary col-md-2" id="saveBtn"> Save</button>
 		<div class="seller-footer">
 			<div class="seller-container" style="padding-top: 20px;">Copyright &copy; 2018 Seller Management Cooperation</div>
+		</div>
+		
+		<div id="infoModel" class="modal" role="dialog">
+		  <div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Save Channels?</h4>
+			  </div>
+			  <div class="modal-body">
+				<h4> You have selected:</h4>
+				<div id="displayingMsg"></div>
+				<div> Click Ok to confirm and Cancel to go back</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" id="okBtn" data-dismiss="modal">Ok</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			  </div>
+			</div>
+		  </div>
 		</div>
 	</body>
 </html>

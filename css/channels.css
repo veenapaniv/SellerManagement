@@ -1,25 +1,191 @@
 .channels-container {
-	padding:30px 20px;
+/*	padding:10px 20px;*/
+    margin-top:5%;
 }
+
+.channels-container h2{
+    text-align: center;
+}
+
+input[type=checkbox] {
+	/*display:none;*/
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /**font-weight: bold;
+    font-size: 2em;**/
+    word-wrap: break-word;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/** new css **/
+
 input[type=checkbox] {
 	display:none;
 }
-input[type=checkbox] + label
+input[id=amazon] + label
 {
 	background: url("../images/amazon.jpg") no-repeat;
 	background-size: 50%;
-	height: 250px;
+	height: 200px;
 	width: 250px;
 	display:inline-block;
 	padding: 0 0 0 0px;
 }
-input[type=checkbox]:checked + label
+input[id=amazon]:checked + label
 {
 	background: url("../images/amazon.jpg") no-repeat;
 	background-size: 50%;
-	height: 250px;
+	height: 200px;
 	width: 250px;
 	display:inline-block;
 	padding: 0 0 0 0px;
 	opacity:0.2;
+}
+input[id=etsy] + label
+{
+	background: url("../images/etsy.jpg") no-repeat;
+	background-size: 50%;
+	height: 200px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+}
+input[id=etsy]:checked + label
+{
+	background: url("../images/etsy.jpg") no-repeat;
+	background-size: 50%;
+	height: 200px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+	opacity:0.2;
+}
+input[id=walmart] + label
+{
+	background: url("../images/walmart.jpg") no-repeat;
+	background-size: 50%;
+	height: 200px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+}
+input[id=walmart]:checked + label
+{
+	background: url("../images/walmart.jpg") no-repeat;
+	background-size: 50%;
+	height: 200px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+	opacity:0.2;
+}
+input[id=bestbuy] + label
+{
+	background: url("../images/bestbuy.jpg") no-repeat;
+	background-size: 50%;
+	height: 200px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+}
+input[id=bestbuy]:checked + label
+{
+	background: url("../images/bestbuy.jpg") no-repeat;
+	background-size: 50%;
+	height: 200px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+	opacity:0.2;
+}
+input[id=ebay] + label
+{
+	background: url("../images/ebay.jpg") no-repeat;
+	background-size: 50%;
+	height: 200px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+}
+input[id=ebay]:checked + label
+{
+	background: url("../images/ebay.jpg") no-repeat;
+	background-size: 50%;
+	height: 200px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+	opacity:0.2;
+}
+input[id=macys] + label
+{
+	background: url("../images/macys.jpg") no-repeat;
+	background-size: 50%;
+	height: 200px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+}
+input[id=macys]:checked + label
+{
+	background: url("../images/macys.jpg") no-repeat;
+	background-size: 50%;
+	height: 200px;
+	width: 250px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+	opacity:0.2;
+}
+.selected {
+    width: 300px;
+    height: 350px;    
+    border: 1px ridge black;
+    background-color: #eee;
+    margin-top:10%;
+}
+#saveBtn {
+    margin-top: 3%;
+    margin-left: 3%;
+}
+#alertMsg {
+	margin-top: 55px;
+	text-align: center;
+}
+.selected h3{
+    text-align: center;
 }
