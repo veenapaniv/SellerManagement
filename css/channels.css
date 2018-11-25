@@ -1,3 +1,5 @@
+/*Created by Group5*/
+/*ID's: 700690160, 700688256, 700688506 */
 .channels-container {
 /*	padding:10px 20px;*/
     margin-top:5%;
@@ -181,6 +183,7 @@ input[id=macys]:checked + label
 #saveBtn {
     margin-top: 3%;
     margin-left: 3%;
+    margin-bottom: 10%;
 }
 #alertMsg {
 	margin-top: 55px;
