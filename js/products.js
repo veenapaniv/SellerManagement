@@ -73,7 +73,7 @@ function addInventory(inventoryData){
 	setObj.amount = $("#amount").val();
 	setObj.shipping = $("#shipping").val();
 	setObj.lastUpdated = new Date().toISOString().slice(0,10);
-	inventoryData.unshift(setObj);
+	inventoryData.unshift(setObj); //to add product to top of the list
 	var editObj = new Object();
 	editObj.id = "";
 	editObj.data = inventoryData

@@ -3,7 +3,8 @@
 "use strict"
 var newsArray;
 var cost;
-$(document).ready(function(){    
+$(document).ready(function(){  
+    //on load function to bind Hamburger 
 	$(window).on("load", function(){
 		loadTrendingNews();
 		$("#openHamburger").on("click",openHamburger);
@@ -34,9 +35,9 @@ $(document).ready(function(){
     $("#calculate").click(function(){
         calculateProfit(cost);
     })
-});
+});//end ready function
 
-
+//jQuery on load function which calls the different functions to load dashboard data
 $(window).on("load", loadDashboardData);
 //on load of the browser window, load different data on the landing page
 function loadDashboardData(){
@@ -48,7 +49,7 @@ function loadDashboardData(){
     loadTopSellingProductsThisMonth();
     //fill the products in dropdown for profit calculator
     fillProducts();
-}
+}//end loadDashboardData
 
 function loadSalesImage()
 {
@@ -69,7 +70,7 @@ function loadSalesImage()
     }
 });
     
-}
+}//end loadSalesImage
 
 function calculateProfit(cost){
     //get the values necessary from the user selection
@@ -89,13 +90,13 @@ function calculateProfit(cost){
         else{
             profit = (costOfProduct*stock) - (shippingPrice*stock);
         $("#result").html("Your approximate profit for the product "+productID+" for "+stock+" units would be $"+profit.toFixed());
-        }
+        }// end if/else
         
     }
     else{
         alert("Please enter all the details appropriately");
-    }
-}
+    }//end if/else
+}//end calculateProfit
 
 function findCost(selectedProduct){
     
@@ -124,7 +125,7 @@ function findCost(selectedProduct){
          
 });
     
-}
+}//end findCost
 
 //Load Seller Statistics from the json file for today for this particular customer.
 function loadSalesFiguresForToday(){
@@ -147,7 +148,7 @@ function loadSalesFiguresForToday(){
         console.log('Error in loading the sales details for Today');
     }
 });
-}
+}//end loadSalesFiguresForToday
 
 //Load Seller Statistics from the json file for Last week for this particular customer.
 function loadSalesFiguresForLastWeek(){
@@ -170,7 +171,7 @@ function loadSalesFiguresForLastWeek(){
         console.log('Error in loading the sales details for Last week');
     }
 });
-}
+}//end loadSalesFiguresForLastWeek
 
 //Load Seller Statistics from the json file for Last Month for this particular customer.
 function loadSalesFiguresForLastMonth(){
@@ -193,7 +194,7 @@ function loadSalesFiguresForLastMonth(){
         console.log('Error in loading the sales details for Last Month');
     }
 });
-}
+}//end loadSalesFiguresForLastMonth
 
 //load the top selling products from the json again
 function loadTopSellingProductsThisMonth(){
@@ -208,7 +209,7 @@ function loadTopSellingProductsThisMonth(){
         //in the success function, dynamically create the table.
         while(document.getElementById("top_products").firstChild){
             document.getElementById("top_products").removeChild(document.getElementById("top_products").firstChild);
-        }
+        }//end ehile
         var length = jsonData.top_selling_products.products.length;
         for(var i=0;i<length;i++){
             var topProductRow = document.createElement("tr");
@@ -231,7 +232,7 @@ function loadTopSellingProductsThisMonth(){
         console.log('Error in loading top selling products for this month');
     }
 });
-}
+}//end loadTopSellingProductsThisMonth
 
 function fillProducts(){
     //get the select tag
@@ -252,16 +253,15 @@ function fillProducts(){
                optionTag.innerHTML = jsonData[i].productId;
                selectTag.appendChild(optionTag);
             }
+        //display cost for default product
         findCost($("#cust_products").val());
     },
     error: function() {
         console.log('Error in loading the products for the dropdown');
     }
-});
+});   
+}//end fillProducts
 
-    
-    
-}
 function loadTrendingNews() {
     //get the xml file which has the news content
     var xhr = new XMLHttpRequest();
@@ -270,7 +270,7 @@ function loadTrendingNews() {
     newsArray = xhr.responseXML.getElementsByTagName("news");
     
     displayNews();
-}
+}//end loadTrendingNews
 
 function displayNews() {
     var parentUnorderedList = document.getElementById("trendingNewsList");
