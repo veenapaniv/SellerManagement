@@ -9,6 +9,8 @@ $(document).ready(function(){
 		loadTrendingNews();
 		$("#openHamburger").on("click",openHamburger);
 		$("#closeHamburger").on("click",closeHamburger);
+        //jQuery on load function which calls the different functions to load dashboard data
+        loadDashboardData();
 	});
     //load the Sales Images of that particular customer as soon as the document loads
     loadSalesImage();
@@ -37,8 +39,6 @@ $(document).ready(function(){
     })
 });//end ready function
 
-//jQuery on load function which calls the different functions to load dashboard data
-$(window).on("load", loadDashboardData);
 //on load of the browser window, load different data on the landing page
 function loadDashboardData(){
     //load the news content
@@ -55,7 +55,7 @@ function loadSalesImage()
 {
     //make a call to the dashboard.json and fetch the sales image to populate on the dashboard
     $.ajax({
-    type: 'POST',
+    type: 'GET',
     url: 'http://localhost/SellerManagement/data/dashboard.json',
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
@@ -102,7 +102,7 @@ function findCost(selectedProduct){
     
     //for the product that the user has selected, let's find out the MRP from json file
      $.ajax({
-    type: 'POST',
+    type: 'GET',
     url: 'http://localhost/SellerManagement/data/inventory.json',
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
@@ -131,7 +131,7 @@ function findCost(selectedProduct){
 function loadSalesFiguresForToday(){
     //Make an ajax request, get the json file
      $.ajax({
-    type: 'POST',
+    type: 'GET',
     url: 'http://localhost/SellerManagement/data/dashboard.json',
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
@@ -154,7 +154,7 @@ function loadSalesFiguresForToday(){
 function loadSalesFiguresForLastWeek(){
     //Make an ajax request, get the json file
      $.ajax({
-    type: 'POST',
+    type: 'GET',
     url: 'http://localhost/SellerManagement/data/dashboard.json',
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
@@ -177,7 +177,7 @@ function loadSalesFiguresForLastWeek(){
 function loadSalesFiguresForLastMonth(){
     //Make an ajax request, get the json file
      $.ajax({
-    type: 'POST',
+    type: 'GET',
     url: 'http://localhost/SellerManagement/data/dashboard.json',
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
@@ -201,7 +201,7 @@ function loadTopSellingProductsThisMonth(){
     var table = document.getElementById("trending_products");
      //Make an ajax request, get the json file
      $.ajax({
-    type: 'POST',
+    type: 'GET',
     url: 'http://localhost/SellerManagement/data/dashboard.json',
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
@@ -239,7 +239,7 @@ function fillProducts(){
     var selectTag = document.getElementById("cust_products");
     //make an ajax call to inventory.json to get all product id's
      $.ajax({
-    type: 'POST',
+    type: 'GET',
     url: 'http://localhost/SellerManagement/data/inventory.json',
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
